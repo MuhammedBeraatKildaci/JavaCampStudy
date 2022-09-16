@@ -5,5 +5,13 @@ public class Main {
             System.out.println(i);
         }
         System.out.println("for döngüsü bitti.");
+
+        // while loop
+        int i = 2;
+        while (i < 10) {
+            System.out.println(i);
+            i += 2;
+        }
+        System.out.println("while döngüsü bitti.");
     }
 }
