@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) throws Exception {
-        CustomerDal customerDal = new MysqlCustomerDal();
-        customerDal.add();
+        CustomerManager customerManager = new CustomerManager(new SqlServerCustomerDal());
+        customerManager.add();
     }
 }
