@@ -12,40 +12,40 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import kodlama.io.devs.business.abstracts.ProgrammingLanguageService;
-import kodlama.io.devs.entities.concrates.ProgrammingLanguage;
+import kodlama.io.devs.business.abstracts.FrameworkService;
+import kodlama.io.devs.entities.concrates.Framework;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping("api/v1/programminglanguage/")
+@RequestMapping("api/v1/framework/")
 @CrossOrigin
 @RequiredArgsConstructor
-public class ProgrammingLanguageController {
-    private ProgrammingLanguageService programmingLanguageService;
+public class FrameworkController {
+    private FrameworkService frameworkService;
 
     @GetMapping("getall")
-    public List<ProgrammingLanguage> getAll() {
-        return programmingLanguageService.getAll();
+    public List<Framework> getAll() {
+        return frameworkService.getAll();
     }
 
     @GetMapping("{id}")
-    public ProgrammingLanguage getById(@PathVariable(name = "id", required = true) int id) {
-        return programmingLanguageService.getById(id);
+    public Framework getById(@PathVariable(name = "id", required = true) int id) {
+        return frameworkService.getById(id);
     }
 
     @PostMapping()
-    public void addProgrammingLanguage(@RequestBody ProgrammingLanguage programmingLanguage) {
-        programmingLanguageService.add(programmingLanguage);
+    public void addProgrammingLanguage(@RequestBody Framework programmingLanguage) {
+        frameworkService.add(programmingLanguage);
     }
 
     @PutMapping("{id}")
     public void updateProgrammingLanguage(@PathVariable(name = "id", required = true) int id,
-            @RequestBody ProgrammingLanguage programmingLanguage) {
-        programmingLanguageService.update(id, programmingLanguage);
+            @RequestBody Framework programmingLanguage) {
+        frameworkService.update(id, programmingLanguage);
     }
 
     @DeleteMapping("{id}")
     public void deleteProgrammingLanguage(@PathVariable(name = "id", required = true) int id) {
-        programmingLanguageService.delete(id);
+        frameworkService.delete(id);
     }
 }
